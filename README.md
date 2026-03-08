@@ -17,7 +17,13 @@ Con esta aplicación se busca:
 Actualmente el proyecto se organiza de la siguiente manera:
 
 - `README.md`: descripción general del proyecto.
-- `database/`: scripts SQL para la base de datos en SQL Server.
+- `database/`: scripts SQL para la base de datos en SQL Server (ejecutar en orden numérico).
   - `01_database.sql`: creación de la base de datos principal.
-  - `02_departamentos.sql`: definición y carga inicial de la tabla de departamentos.
-  - `03_usuarios.sql`: definición y carga inicial de la tabla de usuarios.
+  - `02_departamentos.sql`: tabla de departamentos.
+  - `03_usuarios.sql`: tabla de usuarios.
+  - `04_tipos_activos.sql`: catálogo de tipos de activo.
+  - `05_estatus_activo.sql`: catálogo de estatus del activo.
+  - `06_marcas.sql`: catálogo de marcas.
+  - `07_activos.sql`: tabla de activos (referencia a marcas, tipos y estatus).
+  - `08_historial_asignaciones.sql`: historial de asignaciones y devoluciones.
+  - `09_migrar_marca_a_catalogo.sql`: **solo para BD existente** — migra el campo texto `activos.marca` al catálogo `marcas` y deja `activos.id_marca` como FK.
