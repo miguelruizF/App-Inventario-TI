@@ -12,6 +12,6 @@ CREATE TABLE activos (
 
     FOREIGN KEY (id_marca) REFERENCES marcas(id_marca),
     FOREIGN KEY (id_tipo_activo) REFERENCES tipos_activos(id_tipo_activo),
-    FOREIGN KEY (id_estatus) REFERENCES estatus_activo(id_estatus),
+    FOREIGN KEY (id_estatus) REFERENCES estatus_activos(id_estatus),
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
