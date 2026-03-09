@@ -1,0 +1,25 @@
+{
+  "name": "app-inventario-ti",
+  "version": "1.0.0",
+  "description": "Sistema de inventario TI con Electron y SQL Server.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguelruizF/App-Inventario-TI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miguelruizF/App-Inventario-TI/issues"
+  },
+  "homepage": "https://github.com/miguelruizF/App-Inventario-TI#readme",
+  "devDependencies": {
+    "electron": "^40.8.0",
+    "mssql": "^12.2.0"
+  }
+}
