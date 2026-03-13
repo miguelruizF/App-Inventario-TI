@@ -1,7 +1,7 @@
 {
-  "name": "app-inventario-ti",
+  "name": "inventario-ti",
   "version": "1.0.0",
-  "description": "Sistema de inventario TI con Electron y SQL Server.",
+  "description": "App para administrar un inventario de activos TI",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
@@ -11,15 +11,16 @@
     "type": "git",
     "url": "git+https://github.com/miguelruizF/App-Inventario-TI.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Miguel Angel Ruiz",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/miguelruizF/App-Inventario-TI/issues"
   },
   "homepage": "https://github.com/miguelruizF/App-Inventario-TI#readme",
   "devDependencies": {
-    "electron": "^40.8.0",
+    "electron": "^41.0.0"
+  },
+  "dependencies": {
     "mssql": "^12.2.0"
   }
 }
