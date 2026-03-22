@@ -20,4 +20,7 @@ async function connectDB() {
     }
 }
 
+const bcrypt = require('bcrypt');
+bcrypt.hash('Admin1234!', 10).then(hash => console.log(hash));
+
 module.exports = { connectDB }
