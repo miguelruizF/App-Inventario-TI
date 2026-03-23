@@ -20,7 +20,7 @@ INSERT INTO usuarios_sistema (id_usuario, username, password_hash, id_rol, activ
 VALUES (
     (SELECT id_usuario FROM usuarios WHERE numero_sap = '0000001'),
     'admin',
-    'REEMPLAZAR_CON_HASH_BCRYPT',  -- <-- reemplaza esto
+    '$2b$10$bKfh04yWUXiH90H5sD0qXuzjvm2hxMgvoepko6jU10VkHiAb2xn1',  -- <-- reemplaza esto
     (SELECT id_rol FROM roles WHERE nombre_rol = 'admin'),
     1
 );

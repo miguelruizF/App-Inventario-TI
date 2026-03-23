@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/miguelruizF/App-Inventario-TI#readme",
   "devDependencies": {
+    "bcrypt": "^6.0.0",
     "electron": "^41.0.0"
   },
   "dependencies": {
-    "bcrypt": "^6.0.0",
     "mssql": "^12.2.0"
   }
 }

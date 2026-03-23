@@ -1,4 +1,5 @@
 const sql = require('mssql')
+const bcrypt = require('bcrypt')
 
 const config = {
     user: 'sa',
@@ -11,16 +12,24 @@ const config = {
     }
 }
 
+let pool = null
+
 async function connectDB() {
     try {
-        await sql.connect(config)
-        console.log("Conexion exitosa a SQL Server")
+        pool = await sql.connect(config)
+        console.log('Conexion exitosa a SQL Server')
     } catch (err) {
-        console.log("Error de conexion:", err)
+        console.error('Error de conexion:', err)
+        throw err
     }
 }
 
-const bcrypt = require('bcrypt');
-bcrypt.hash('Admin1234!', 10).then(hash => console.log(hash));
+function getPool() {
+    if (!pool) throw new Error('Base de datos no conectada')
+    return pool
+}
 
-module.exports = { connectDB }
+module.exports = { connectDB, getPool, sql }
+//bcrypt.hash('mortal_12', 10).then(hash => console.log(hash));
+
+//module.exports = { connectDB } 

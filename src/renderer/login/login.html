@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; style-src 'self'; script-src 'self'" />
+    <title>Inventario TI — Login</title>
+    <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+    <div class="card">
+
+        <div class="brand">
+            <span class="brand-icon">&#128187;</span>
+            <h1>Inventario TI</h1>
+        </div>
+
+        <form id="loginForm" novalidate>
+
+            <div class="field">
+                <label for="username">Usuario</label>
+                <input
+                    id="username"
+                    type="text"
+                    placeholder="Ingresa tu usuario"
+                    autocomplete="username"
+                    required
+                />
+            </div>
+
+            <div class="field">
+                <label for="password">Contraseña</label>
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="Ingresa tu contraseña"
+                    autocomplete="current-password"
+                    required
+                />
+            </div>
+
+            <p id="errorMsg" class="error hidden"></p>
+
+            <button type="submit" id="btnLogin">Iniciar sesión</button>
+
+        </form>
+
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
