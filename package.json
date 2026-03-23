@@ -19,7 +19,8 @@
   "homepage": "https://github.com/miguelruizF/App-Inventario-TI#readme",
   "devDependencies": {
     "bcrypt": "^6.0.0",
-    "electron": "^41.0.0"
+    "electron": "^41.0.0",
+    "tailwind": "^4.0.0"
   },
   "dependencies": {
     "mssql": "^12.2.0"

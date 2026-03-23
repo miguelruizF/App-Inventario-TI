@@ -8,8 +8,8 @@ let dashboardWindow = null
 
 function createLoginWindow() {
     loginWindow = new BrowserWindow({
-        width:     420,
-        height:    520,
+        width:     920,
+        height:    720,
         resizable: false,
         webPreferences: {
             preload:          PRELOAD,
