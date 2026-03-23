@@ -1,53 +1,270 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self'; style-src 'self'; script-src 'self'" />
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
     <title>Inventario TI — Login</title>
-    <link rel="stylesheet" href="login.css" />
-</head>
-<body>
-
-    <div class="card">
-
-        <div class="brand">
-            <span class="brand-icon">&#128187;</span>
-            <h1>Inventario TI</h1>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#2c3437",
+              "primary-dim": "#0049c2",
+              "surface-container": "#eaeff2",
+              tertiary: "#6b5780",
+              "primary-fixed": "#3e76fe",
+              surface: "#f7f9fb",
+              "on-surface-variant": "#596064",
+              "outline-variant": "#acb3b7",
+              secondary: "#585f72",
+              "primary-container": "#3e76fe",
+              "on-secondary-fixed-variant": "#555b6e",
+              "surface-container-highest": "#dce4e8",
+              "on-error-container": "#6e0a12",
+              "on-tertiary-container": "#523f67",
+              "on-primary": "#faf8ff",
+              background: "#f7f9fb",
+              "on-secondary-container": "#4b5164",
+              "on-primary-container": "#000000",
+              "secondary-container": "#dce2f9",
+              "on-primary-fixed": "#ffffff",
+              "inverse-surface": "#0b0f10",
+              "inverse-on-surface": "#9a9d9f",
+              "error-dim": "#67040d",
+              "secondary-dim": "#4c5366",
+              "surface-container-high": "#e3e9ed",
+              "tertiary-fixed": "#e1c8f8",
+              "error-container": "#fa746f",
+              "on-primary-fixed-variant": "#f9f7ff",
+              primary: "#0053dc",
+              "on-tertiary-fixed-variant": "#5c4870",
+              outline: "#747c80",
+              "on-tertiary": "#fff6ff",
+              "on-surface": "#2c3437",
+              "tertiary-container": "#e1c8f8",
+              "tertiary-fixed-dim": "#d3bae9",
+              "on-secondary-fixed": "#383f51",
+              error: "#a83836",
+              "on-error": "#fff7f6",
+              "secondary-fixed": "#dce2f9",
+              "secondary-fixed-dim": "#ced4eb",
+              "primary-fixed-dim": "#2d68f0",
+              "on-tertiary-fixed": "#3e2c52",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f0f4f7",
+              "surface-variant": "#dce4e8",
+              "surface-tint": "#0053dc",
+              "surface-dim": "#d4dbdf",
+              "on-secondary": "#f9f8ff",
+              "surface-bright": "#f7f9fb",
+              "tertiary-dim": "#5e4b73",
+              "inverse-primary": "#618bff",
+            },
+            fontFamily: {
+              headline: ["Manrope", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+              label: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .atmospheric-shadow {
+        box-shadow: 0px 20px 50px rgba(44, 52, 55, 0.06);
+      }
+      .primary-gradient {
+        background: linear-gradient(135deg, #0053dc 0%, #3e76fe 100%);
+      }
+    </style>
+  </head>
+  <body class="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+    <!-- Main Content Canvas -->
+    <main class="flex-grow flex items-center justify-center">
+      <div
+        class="w-full grid grid-cols-1 md:grid-cols-2 min-h-[calc(100vh-80px)]"
+      >
+        <!-- Branding Side (50%) -->
+        <div
+          class="hidden md:flex flex-col items-center justify-center p-12 bg-surface-container-low"
+        >
+          <div class="max-w-md text-center md:text-left">
+            <h1
+              class="font-headline text-6xl lg:text-7xl font-extrabold tracking-tight text-on-surface leading-[1.1] mb-6"
+            >
+              Inventario <span class="text-primary">TI</span>
+            </h1>
+            <p
+              class="text-on-surface-variant text-lg lg:text-xl font-medium max-w-sm leading-relaxed"
+            >
+              Gestión inteligente de activos tecnológicos para la
+              infraestructura moderna.
+            </p>
+            <div class="mt-8 flex gap-4">
+              <div class="h-1 w-12 bg-primary rounded-full"></div>
+              <div
+                class="h-1 w-4 bg-outline-variant rounded-full opacity-30"
+              ></div>
+              <div
+                class="h-1 w-4 bg-outline-variant rounded-full opacity-30"
+              ></div>
+            </div>
+          </div>
         </div>
-
-        <form id="loginForm" novalidate>
-
-            <div class="field">
-                <label for="username">Usuario</label>
-                <input
+        <!-- Login Card Side (50%) -->
+        <div class="flex items-center justify-center p-8 lg:p-12">
+          <div
+            class="w-full max-w-md bg-surface-container-lowest atmospheric-shadow rounded-xl p-8 lg:p-10 border border-outline-variant/10"
+          >
+            <div class="mb-10">
+              <h2 class="font-headline text-3xl font-bold text-on-surface mb-2">
+                Welcome Back
+              </h2>
+              <p class="text-on-surface-variant text-sm">
+                Please enter your credentials to continue.
+              </p>
+            </div>
+            <form class="space-y-6" id="loginForm" novalidate>
+              <!-- Username Field -->
+              <div class="space-y-2">
+                <label
+                  class="block text-xs font-semibold uppercase tracking-wider text-on-surface-variant ml-1"
+                  for="username"
+                  >Username</label
+                >
+                <div class="relative group">
+                  <input
+                    class="w-full px-4 py-3.5 bg-surface-container-low border-none rounded-xl text-on-surface placeholder:text-outline focus:ring-0 focus:bg-surface-container-lowest transition-all"
                     id="username"
+                    name="username"
+                    placeholder="architect.name"
                     type="text"
-                    placeholder="Ingresa tu usuario"
+                    required
                     autocomplete="username"
-                    required
-                />
-            </div>
-
-            <div class="field">
-                <label for="password">Contraseña</label>
-                <input
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 h-0.5 w-0 bg-primary group-focus-within:w-full transition-all duration-300"
+                  ></div>
+                </div>
+              </div>
+              <!-- Password Field -->
+              <div class="space-y-2">
+                <div class="flex justify-between items-center px-1">
+                  <label
+                    class="block text-xs font-semibold uppercase tracking-wider text-on-surface-variant"
+                    for="password"
+                    >Password</label
+                  >
+                </div>
+                <div class="relative group">
+                  <input
+                    class="w-full px-4 py-3.5 bg-surface-container-low border-none rounded-xl text-on-surface placeholder:text-outline focus:ring-0 focus:bg-surface-container-lowest transition-all"
                     id="password"
+                    name="password"
+                    placeholder="••••••••"
                     type="password"
-                    placeholder="Ingresa tu contraseña"
-                    autocomplete="current-password"
                     required
-                />
+                    autocomplete="current-password"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 h-0.5 w-0 bg-primary group-focus-within:w-full transition-all duration-300"
+                  ></div>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-2">
+                <div class="flex items-center">
+                  <input
+                    class="w-4 h-4 rounded-lg border-outline-variant text-primary focus:ring-primary/20"
+                    id="remember"
+                    type="checkbox"
+                  />
+                  <label
+                    class="ml-2 text-sm text-on-surface-variant"
+                    for="remember"
+                    >Keep me signed in</label
+                  >
+                </div>
+                <a
+                  class="text-sm font-medium text-primary hover:underline underline-offset-4"
+                  href="#"
+                  >Forgot password?</a
+                >
+              </div>
+              <!-- Primary Login Button -->
+              <button
+                class="w-full primary-gradient text-on-primary py-4 rounded-xl font-semibold atmospheric-shadow hover:opacity-95 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                type="submit"
+                id="btnLogin"
+              >
+                Login
+                <span class="material-symbols-outlined text-[20px]"
+                  >arrow_forward</span
+                >
+              </button>
+            </form>
+            <!-- Error Message -->
+            <div class="text-center text-sm text-error-container mt-4" id="errorMsg">
+              <span class="material-symbols-outlined text-[20px]">error</span>
+              <span id="errorMsgText"></span>
             </div>
-
-            <p id="errorMsg" class="error hidden"></p>
-
-            <button type="submit" id="btnLogin">Iniciar sesión</button>
-
-        </form>
-
-    </div>
-
-    <script src="login.js"></script>
-</body>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full bg-transparent mt-auto">
+      <div
+        class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto"
+      >
+        <div class="font-inter text-xs tracking-wide text-slate-500">
+          © 2024 Inventario TI. All rights reserved.
+        </div>
+        <div class="flex gap-6">
+          <a
+            class="font-inter text-xs tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="font-inter text-xs tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="font-inter text-xs tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
+            href="#"
+            >Security</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="login.js"></script>
 </html>
