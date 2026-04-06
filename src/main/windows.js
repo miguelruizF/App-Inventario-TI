@@ -27,8 +27,8 @@ function createLoginWindow() {
 
 function createDashboardWindow() {
     dashboardWindow = new BrowserWindow({
-        width:     1280,
-        height:    720,
+        width:     1365,
+        height:    980,
         minWidth:  900,
         minHeight: 600,
         webPreferences: {

@@ -2,6 +2,8 @@ const { ipcMain } = require('electron')
 const bcrypt = require('bcrypt')
 const { findUserByUsername } = require('../../../database/queries/auth.queries')
 const { createDashboardWindow } = require('../windows')
+const { BrowserWindow } = require('electron')
+const { createLoginWindow } = require('../windows')
 
 function registerAuthHandlers() {
 
@@ -28,8 +30,10 @@ function registerAuthHandlers() {
         }
     })
 
-    ipcMain.handle('auth:logout', async () => {
-        // El cierre de ventana es manejado por el renderer llamando window.close()
+    ipcMain.handle('auth:logout', async (event) => {
+        const win = BrowserWindow.fromWebContents(event.sender)
+        if (win) win.close()
+        createLoginWindow()
         return { success: true }
     })
 

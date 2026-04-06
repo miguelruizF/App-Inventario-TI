@@ -169,16 +169,16 @@
         </a>
       </nav>
       <div class="pt-4 border-t border-slate-200 space-y-1">
-        <button
+        <!-- <button
           class="w-full flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all"
         >
           <span class="material-symbols-outlined" data-icon="help_outline"
             >help_outline</span
           >
           <span>Support</span>
-        </button>
+        </button> -->
         <button
-          class="w-full flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all"
+          class="w-full flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all" id="btn_logout"
         >
           <span class="material-symbols-outlined" data-icon="logout"
             >logout</span
@@ -717,6 +717,33 @@
         </section>
       </div>
     </main>
+     <!-- Footer -->
+    <footer class="ml-64 bg-transparent mt-auto">
+      <div
+        class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto"
+      >
+        <div class="font-inter text-xs tracking-wide text-slate-500">
+          © 2026 Inventario TI by Miguel Ruiz. All rights reserved.
+        </div>
+        <div class="flex gap-6">
+          <a
+            class="font-inter text-xs tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="font-inter text-xs tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="font-inter text-xs tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
+            href="#"
+            >Security</a
+          >
+        </div>
+      </div>
+    </footer>
     <!-- <script>
       const themeToggle = document.getElementById("theme-toggle");
       const htmlElement = document.documentElement;
@@ -746,5 +773,6 @@
         htmlElement.classList.add("light");
       }
     </script> -->
+    <script src="dashboard.js"></script>
   </body>
 </html>
